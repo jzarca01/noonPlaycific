@@ -1,0 +1,7 @@
+{
+    "clientId" : "",
+    "clientSecret" : "",
+    "redirectUri" : "http://localhost:8888/callback",
+    "scope" : ["playlist-modify-public", "playlist-modify-private", "playlist-read-private", "user-library-read", "user-read-email", "user-read-birthdate"]    
+    
+}

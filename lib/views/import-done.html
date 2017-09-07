@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Import done</title>
+		<link href="https://d2d1dxiu3v1f2i.cloudfront.net/a82e3da/css/index.css" media="screen" rel="stylesheet">
+	</head>
+	<body>
+			<div class="container-fluid authorize ng-scope" style="margin-top: 10%">
+					<div class="content">
+						<div class="row">
+							<div class="col-xs-12">
+								
+								{% if user %}					
+								<div class="client-info">
+									<h2 ng-class="{'client-name-with-image': client.image}" class="client-name ng-binding" ng-bind-html="'authorizeHeadline' | localize:client.name">
+											Hi {{ user.id }}.
+									</h2>
+								</div>
+								
+								<p ng-if="client.description" class="lead text-center ng-binding ng-scope" ng-bind="client.description">
+									{{message}}				
+								</p>
+							
+								<button class="auth-allow btn btn-sm btn-green ng-binding" onClick="window.close()">Thank you.</button>
+								{% endif %}
+				
+							</div>
+						</div>
+					</div>
+				</div>
+        </body>
+</html>
+
