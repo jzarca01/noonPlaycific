@@ -9,6 +9,7 @@ const Api = require('./lib/noon-pacific-api');
 const api = new Api();
 
 const Spotify = require('./lib/spotify');
+const Deezer = require('./lib/deezer');
 
 program
   .version('0.1.0')
@@ -25,15 +26,17 @@ if (program.list) {
 if (program.mixtape) {
     return api.getTracks(program.mixtape)
     .then(response => response.results)
-    .then(results => results.map(e => e.stream_url))
-    .then(tracksArray => {
+    .then(results => {
         switch(program.provider) {
             case 'spotify':
-                new Spotify(`NOON // ${program.mixtape}`, tracksArray, false)
+                new Spotify(`NOON // ${program.mixtape}`, results.map(e => e.stream_url), false);
+                break;
+            case 'deezer':
+                new Deezer(`NOON // ${program.mixtape}`, results, false);
                 break;
             default:
                 console.log("no default provider");
-                new Spotify(`NOON // ${program.mixtape}`, tracksArray, false)
+                new Spotify(`NOON // ${program.mixtape}`, results.map(e => e.stream_url), false);
                 break;  
         }
     })

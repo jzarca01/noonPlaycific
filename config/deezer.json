@@ -1,0 +1,6 @@
+{
+    "scope" : ["basic_access", "email", "manage_library"],
+    "clientId" : "",
+    "clientSecret" : "",
+    "redirectUri" : "http://localhost:8888/callback"
+}
