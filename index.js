@@ -13,7 +13,7 @@ const Deezer = require('./lib/deezer');
 
 program
   .version('0.1.0')
-  .option('-l, --list', 'Retrieve all the mixtapes available')
+  .option('-l, --list <type>', 'Retrieve all the mixtapes available [los-angeles|new-york|london|singles]')
   .option('-m, --mixtape <number>', 'Retrieve the tracks in selected mixtape')
   .option('-p --provider <type>', 'Select music provider [spotify]')
   .parse(process.argv);
