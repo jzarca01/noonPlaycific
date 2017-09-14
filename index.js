@@ -19,7 +19,7 @@ program
   .parse(process.argv);
 
 if (program.list) {
-    return api.getMixtapes()
+    return api.getMixtapes(program.list)
     .then(response => console.log(response));
 }
 
