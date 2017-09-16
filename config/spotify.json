@@ -1,6 +1,6 @@
 {
     "scope" : ["playlist-modify-public", "playlist-modify-private", "playlist-read-private", "user-library-read", "user-read-email", "user-read-birthdate"],
-    "clientId" : "",
-    "clientSecret" : "",
+    "clientId" : "b5a536dd66f74bbb861f3d32f81c7de7",
+    "clientSecret" : "b8b903b3652f4831aa10fdea7082f7a0",
     "redirectUri" : "http://localhost:8888/callback"
 }
