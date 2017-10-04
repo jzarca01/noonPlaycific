@@ -8,6 +8,12 @@ const program = require('commander');
 const Api = require('./lib/noon-pacific-api');
 const api = new Api();
 
+function setCoolTitle(mixtape) {
+  if(mixtape !== null || mixtape !== undefined) {
+     return mixtape.replace("-", " // ").toUpperCase();
+  }
+}
+
 program
   .version('0.1.0')
   .option('-l, --list <type>', 'Retrieve all the mixtapes available [los-angeles|new-york|london|singles]')
@@ -27,15 +33,15 @@ if (program.mixtape) {
         switch(program.provider) {
             case 'spotify':
                 const Spotify = require('./lib/spotify');
-                new Spotify(program.mixtape, results.map(e => e.stream_url), false);
+                new Spotify(setCoolTitle(program.mixtape), results.map(e => e.stream_url), false);
                 break;
             case 'deezer':
                 const Deezer = require('./lib/deezer');            
-                new Deezer(program.mixtape, results, false);
+                new Deezer(setCoolTitle(program.mixtape), results, false);
                 break;
             default:
                 console.log("no default provider");
-                new Spotify(program.mixtape, results.map(e => e.stream_url), false);
+                new Spotify(setCoolTitle(program.mixtape), results.map(e => e.stream_url), false);
                 break;  
         }
     })
