@@ -39,6 +39,10 @@ if (program.mixtape) {
                 const Deezer = require('./lib/deezer');            
                 new Deezer(setCoolTitle(program.mixtape), results, false);
                 break;
+            case 'napster':
+                const Napster = require('./lib/napster');            
+                new Napster(setCoolTitle(program.mixtape), results, false);
+                break;
             default:
                 console.log("no default provider");
                 new Spotify(setCoolTitle(program.mixtape), results.map(e => e.stream_url), false);
